@@ -10,7 +10,7 @@ Variables are namespaced, so it doesn't mess up EE's native category stuff. It a
 	<div class="card box" data-cat="{cl:category_url_title}">
 		<a href="{site_url}members?cat={cl:category_id}" class="content-wrapper-link">
 			<div class="service-element">
-				<span class="fa fa-{cl:icon} fa-3x" style="height:2rem;width:2rem;"></span>
+				<span class="fa fa-{cl:icon}"></span>
 			</div>
 			<div class="service-info">
 				<h3>{cl:category_name}</h3>
