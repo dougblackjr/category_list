@@ -2,7 +2,7 @@
 
 return array(
 	'name' => 'Category List',
-	'version' => '1.0',
+	'version' => '1.1',
 	'author' => 'Doug Black',
 	'author_url' => 'https://triplenerdscore.net',
 	'description' => 'Returns the category with sorts and stuff',

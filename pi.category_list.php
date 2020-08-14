@@ -14,9 +14,10 @@ class Category_list {
 
         $channelName = ee()->TMPL->fetch_param('channel', '');
         $orderBy = ee()->TMPL->fetch_param('order_by','');
+        $catUrlTitle = ee()->TMPL->fetch_param('cat_url_title');
         $sort = ee()->TMPL->fetch_param('sort', 'ASC');
 
-        $categories = $this->getCategories($channelName, $orderBy, $sort);
+        $categories = $this->getCategories($channelName, $orderBy, $sort, $catUrlTitle);
 
         // Ship them to the template
 		$output = ee()->TMPL->parse_variables($tagdata, $categories);
@@ -25,7 +26,7 @@ class Category_list {
 
 	}
 
-	public function getCategories($channelName, $order_by, $sort)
+	public function getCategories($channelName, $order_by, $sort, $catUrlTitle = null)
 	{
 
 		$site = ee('Model')->get('Site')
@@ -44,6 +45,8 @@ class Category_list {
 		{
 
 			foreach ($cat_group->Categories as $category) {
+
+				if($catUrlTitle && $catUrlTitle !== $category->cat_url_title) continue;
 
 				$catData = [
 					'category_id'			=> $category->cat_id,
