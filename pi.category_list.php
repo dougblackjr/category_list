@@ -39,6 +39,8 @@ class Category_list {
 						->filter('channel_name', $channelName)
 						->first();
 
+		if(!$channel) return [];
+
 		$categories = [];
 
 		foreach ($channel->getCategoryGroups() as $cat_group)
